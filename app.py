@@ -20,5 +20,10 @@ book_list = [
 cur.executemany('''INSERT INTO books(id, title, author, price) values(?,?,?,?)
 ''', book_list)
 
+# Query database and use fetch all to print out the contents
+cur.execute('SELECT * FROM books')
+print(cur.fetchall())
+
+
 db.commit()
 db.close()  
